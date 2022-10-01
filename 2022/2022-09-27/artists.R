@@ -37,7 +37,7 @@ artists %>%
   arrange(desc(race2)) %>% 
   ggplot(aes(fct_reorder(type, desc(type)), location_quotient, color=race2)) +
   geom_beeswarm(alpha=0.7, size=7) +
-  scale_y_continuous("Location Quotient", trans = "log2") +
+  scale_y_continuous("Location Quotient (Log2)", trans = "log2") +
   scale_color_manual(values = c("red", "grey70"),
                      breaks = c("African-American", "Other")) +
   coord_flip() +
