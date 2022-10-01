@@ -42,7 +42,7 @@ artists %>%
                      breaks = c("African-American", "Other")) +
   coord_flip() +
   facet_wrap(~region) +
-  labs(title = "<span style = 'color:red;'>African-American </span>Artists in the East vs. West",
+  labs(title = "<span style ='color:red;'>African-American </span>Artists in the East vs. West",
        subtitle = str_wrap(
          "The Location quotients (LQ) measure an artist occupation's concentration in the labor force,
   relative to the U.S. labor force share. For example, an LQ of 1.2 indicates that the state's
