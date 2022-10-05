@@ -43,21 +43,21 @@ df <- product_cat %>%
 df %>% 
   ggplot(aes(avg_upvote, reorder(category_tags, avg_upvote))) +
   geom_bar(stat="identity", aes(fill=top_cat)) +
-  geom_text(aes(label=avg_upvote), hjust=-0.5, size = 5, family=font, color="gray90", fontface="bold") +
+  geom_text(data=df %>% filter(category_tags!="Design Tools"),aes(label=avg_upvote), hjust=-0.5, size = 5, family=font, color="gray70", fontface="bold") +
   geom_text(data=df %>% filter(category_tags=="Design Tools"), aes(label=avg_upvote), hjust=-0.5, size = 5, family=font, color="orange", fontface="bold") +
   scale_fill_manual(breaks = c(FALSE, TRUE),
-                     values = c("gray90", "orange")) +
+                     values = c("gray70", "orange")) +
   expand_limits(x=500) +
   labs(title = "Average Number of Upvotes for Products on Product Hunt",
-       subtitle = str_wrap("Design tools receive on average the highest number of upvotes out of product categories with more than 1M upvotes", 80),
+       subtitle = "<span style ='color:orange;'>Design tools </span> receive on average the highest number of upvotes out of product categories with more than 1M upvotes",
        x = "Average Number of Upvotes",
        caption =
          "Graphic: @gentiang\nSource: components.one by way of Data is Plural \nCode: gentiang/tidytuesday \n#rstats #tidytuesday") + 
   theme_minimal() +
   theme(plot.margin = margin(1,1,1.5,1.2, "cm"),
         axis.title = element_blank(),
-        plot.title = element_text(size=25, face = "bold", family=font, color = "gray90", margin=margin(b=10)),
-        plot.subtitle = element_text(size=15, family=font, color="gray90"),
+        plot.title = element_text(size=25, face = "bold", family=font, color = "gray90", margin=margin(b=20)),
+        plot.subtitle = element_markdown(size=15, family=font, color="gray90"),
         plot.caption = element_text(hjust = 1, size=12, family=font, face="italic", color="gray80", vjust=0.1, margin=margin(t=-60)),
         axis.text.y = element_text(size = 13, color = "gray90", family=font, face="bold"),
         axis.text.x = element_blank(),
@@ -67,5 +67,3 @@ df %>%
         panel.grid = element_blank(),
         panel.background = element_rect(fill="#1e3963", colour = "#1e3963"),
         plot.background = element_rect(fill="#1e3963", colour = "#1e3963"))
-
-#ggsave("fig1.jpg", width=1440, height=900, unit="px", dpi = 300)
