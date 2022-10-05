@@ -49,7 +49,7 @@ df %>%
                      values = c("gray70", "orange")) +
   expand_limits(x=500) +
   labs(title = "Average Number of Upvotes for Products on Product Hunt",
-       subtitle = "<span style ='color:orange;'>Design tools </span> receive on average the highest number of upvotes out of product categories with more than 1M upvotes",
+       subtitle = "<span style ='color:orange;'>Design tools </span> receive on average <span style ='color:orange;'>430</span> upvotes per product out of product categories with more than 1M upvotes",
        x = "Average Number of Upvotes",
        caption =
          "Graphic: @gentiang\nSource: components.one by way of Data is Plural \nCode: gentiang/tidytuesday \n#rstats #tidytuesday") + 
