@@ -13,6 +13,7 @@ library(glue)
 library(lubridate)
 library(ggdist)
 library(MetBrewer)
+library(cowplot)
 
 #Loading fonts
 font_add_google(name = "Montserrat", family = "Montserrat")
@@ -128,8 +129,7 @@ df |>
     caption = titles$legend
   )
 
-
-# Exportação ---------------------------------------------------
+# Export ---------------------------------------------------
 
 
 ggsave("yarn.png", 
