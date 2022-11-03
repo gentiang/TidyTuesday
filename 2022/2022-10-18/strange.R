@@ -35,13 +35,13 @@ tbl <- dialogue_sentiment %>%
 
 dialogue_sentiment %>%
   ggplot(aes(label=word, size=n, color=sentiment)) +
-  geom_text_wordcloud_area(shape="circle", rm_outside = T, family=font) +
+  geom_text_wordcloud(shape="circle", rm_outside = T, family=font) +
   scale_size_area(max_size = 25) +
   scale_color_manual(values = c("darkred", "steelblue"), breaks = c("negative", "positive")) +
-  labs(title = "A Huge Pile of Shit",
+  labs(title = "A Huge Pile of \"Shit\"",
        subtitle = glue("{tbl[1,3]} of all Stranger Things dialogue shows negative sentiment"),
        caption =
-         "Graphic: @gentiang\nSource: 8flix.com - prepped by Dan Fellowes & Jonathan Kitt \nCode: gentiang/tidytuesday \n#rstats #tidytuesday") +
+         "Graph: @gentiang\nSource: 8flix.com - prepped by Dan Fellowes & Jonathan Kitt \nCode: gentiang/tidytuesday") +
   theme_minimal() +
   theme(plot.margin = margin(1,1,1,1, "cm"),
         panel.background = element_rect(fill="black", colour = "black"),
